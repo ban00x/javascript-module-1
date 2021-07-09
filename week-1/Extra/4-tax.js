@@ -4,8 +4,11 @@
   A business requires a program that calculates how much sales tax to charge
   Sales tax is 20% of the price of the product
 */
+const currencySymbol = "£";
 
-function calculateSalesTax() {}
+function calculateSalesTax(price) {
+    return price + price / 100 * 20;
+}
 
 /*
   CURRENCY FORMATTING
@@ -17,7 +20,12 @@ function calculateSalesTax() {}
   Remember that the prices must include the sales tax (hint: you already wrote a function for this!)
 */
 
-function addTaxAndFormatCurrency() {}
+function addTaxAndFormatCurrency(price) {
+    const priceWithTax = calculateSalesTax(price);
+    const formatedPrice = priceWithTax.toFixed(2);
+    const formatedPriceWithTax = `£${formatedPrice}`;
+    return formatedPriceWithTax;
+}
 
 /* ======= TESTS - DO NOT MODIFY =====
 There are some Tests in this file that will help you work out if your code is working.
