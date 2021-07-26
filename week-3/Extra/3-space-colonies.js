@@ -8,25 +8,28 @@
   NOTE: don't include any element that is not a "family".
 */
 
-function colonisers() {
 
+function colonisers(array) {
+    let filteredFms = array.filter(element =>
+        element.charAt(0) === "A" && element.includes('family'));
+    return filteredFms;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 const voyagers = [
-  "Adam family",
-  "Potter family",
-  "Eric",
-  "Aldous",
-  "Button family",
-  "Jude",
-  "Carmichael",
-  "Bunny",
-  "Asimov",
-  "Oscar family",
-  "Avery family",
-  "Archer family"
+    "Adam family",
+    "Potter family",
+    "Eric",
+    "Aldous",
+    "Button family",
+    "Jude",
+    "Carmichael",
+    "Bunny",
+    "Asimov",
+    "Oscar family",
+    "Avery family",
+    "Archer family"
 ];
 
 const util = require('util');
@@ -43,7 +46,6 @@ function test(test_name, actual, expected) {
 }
 
 test(
-  "colonisers function works",
-  colonisers(voyagers),
-  ["Adam family", "Avery family", "Archer family"]
+    "colonisers function works",
+    colonisers(voyagers), ["Adam family", "Avery family", "Archer family"]
 )
